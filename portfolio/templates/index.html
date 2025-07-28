@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connor Vance - Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Left 1/3) -->
+        <aside class="sidebar">
+            <div class="profile-image">
+                <img src="/static/cv.png" alt="Connor Vance" />
+            </div>
+            <div class="contact-info">
+                <h1>Connor Vance</h1>
+                <p>IT Support Specialist</p>
+                <ul>
+                    <li><a href="mailto:connoraavance@outlook.com">connoraavance@outlook.com</a></li>
+                    <li><a href="tel:+14172740331">+1-417-274-0331</a></li>
+                    <li><a href="https://www.linkedin.com/in/connor-vance" target="_blank">LinkedIn</a></li>
+                    <li>
+                        <a href="https://github.com/caavme" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://bsky.app/profile/caav.me" target="_blank" title="Bluesky">
+                            <img src="/static/butterfly.png" alt="Bluesky" style="width:18px;height:18px;vertical-align:middle;margin-right:6px;">
+                            Bluesky
+                        </a>
+                    </li>
+                    <li>Fenton, MI</li>
+                </ul>
+            </div>
+            <section>
+                <h2>Projects</h2>
+                <div class="projects">
+                    {% for project in projects %}
+                    <div class="project-card">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.link }}" target="_blank">View on GitHub</a>
+                        <div class="project-gallery">
+                            {% for image in project.images %}
+                            <img src="{{ image }}" alt="{{ project.title }} screenshot" onclick="openModal(this.src)" />
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </aside>
+
+        <!-- Main Resume Content (Right 2/3) -->
+        <main class="resume-content">
+            <section>
+                <h2>Objective</h2>
+                <p>
+                    I am an experienced IT Support Specialist with over 6 years in the field. My passion lies in troubleshooting, repairing, crafting thorough documentation, and empowering teams with knowledge.
+                </p>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <ul>
+                    <li>
+                        <strong>Bachelors in Computer Engineering</strong><br>
+                        Old Dominion University, Norfolk, VA — 2024 - 2028
+                    </li>
+                    <li>
+                        <strong>Associate in Applied Science in Networking</strong><br>
+                        Washtenaw Community College, Ann Arbor, MI — 2019
+                    </li>
+                    <li>
+                        <strong>Associate in Applied Science in Application Development</strong><br>
+                        Southwestern Community College, Creston, IA — 2014 to 2015
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <div class="experience">
+                    <h3>System Services Representative</h3>
+                    <p><strong>IBM, Detroit, MI</strong> — 10/2024 to Present</p>
+                    <ul>
+                        <li>Provided on-site technical support for devices, including repair, troubleshooting, and replacement part orders.</li>
+                        <li>Ensured compliance with industry standards and company policies to maximize budget.</li>
+                        <li>Trained in servicing Cisco, Supermicro, NetApp, Apple, Lenovo, Teradata, PureStorage, Lexmark, and IBM Logo products.</li>
+                    </ul>
+                    <h3>Technical Support Specialist</h3>
+                    <p><strong>IBM, Remote</strong> — 07/2022 to 10/2024</p>
+                    <ul>
+                        <li>Provided remote technical support to employees of the global leader in cybersecurity.</li>
+                        <li>Refreshed documentation and developed training materials requiring collaboration across multiple departments and department heads.</li>
+                        <li>Implemented training which improved performance statistics, resulting in greater client and end-user satisfaction.</li>
+                    </ul>
+                    <h3>System Services Representative</h3>
+                    <p><strong>IBM, Detroit, MI</strong> — 07/2021 to 07/2022</p>
+                    <ul>
+                        <li>Provided on-site technical support for devices, including repair, troubleshooting, and replacement part orders.</li>
+                        <li>Ensured compliance with industry standards and company policies to maximize budget.</li>
+                        <li>Facilitated the installation of server infrastructure for a national grocery chain.</li>
+                    </ul>
+                    <h3>Jr. POS Systems Analyst</h3>
+                    <p><strong>Busch’s Fresh Food Market, Ann Arbor, MI</strong> — 10/2020 to 07/2021</p>
+                    <ul>
+                        <li>Responsible for managing the Point-of-Sale systems for a 17-store grocery chain.</li>
+                        <li>Analyzed business reports and collaborated with staff to develop procedures for ensuring system availability, data integrity, and customer satisfaction.</li>
+                    </ul>
+                    <h3>Help Desk Technician</h3>
+                    <p><strong>Busch’s Fresh Food Market, Ann Arbor, MI</strong> — 10/2018 to 10/2020</p>
+                    <ul>
+                        <li>Conducted hardware and software troubleshooting.</li>
+                        <li>Executed technology implementation projects.</li>
+                        <li>Provided customer support, resulting in improved system performance and user satisfaction among end-users and C-Suite Executives alike.</li>
+                        <li>Assisted organization in remediating a ransomware attack.</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul>
+                    <li>Hardware and software troubleshooting</li>
+                    <li>System configuration and maintenance</li>
+                    <li>Lead Team Training</li>
+                    <li>Proficient in researching solutions and highly regarded for problem resolution and customer satisfaction</li>
+                    <li>Skilled in managing and creating documentation to build out a complete knowledge base for team education</li>
+                    <li>Adept at configuring and troubleshooting computers, servers, and peripherals to meet company and security standards</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Certifications</h2>
+                <ul>
+                    <li>CCT Data Center — Cisco — 2024</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <!-- Modal for image preview -->
+    <div id="imgModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal();event.stopPropagation();">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+    <footer>
+        <p>&copy; 2025 Connor Vance</p>
+    </footer>
+    <script>function openModal(src) {
+    var modal = document.getElementById("imgModal");
+    var modalImg = document.getElementById("modalImg");
+    modal.style.display = "flex";
+    modalImg.src = src;
+}
+function closeModal() {
+    document.getElementById("imgModal").style.display = "none";
+}</script>
+</body>
+</html>
