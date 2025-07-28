@@ -7,7 +7,7 @@ def index():
     projects = [
         {
             "title": "Vance Finance",
-            "description": "A cool project using Python and Flask.",
+            "description": "A comprehensive personal finance management application built with Flask.",
             "link": "https://github.com/caavme/Vance-Finance",
             "images": [
                 "/static/projects/vancefinance1.png",
@@ -18,7 +18,7 @@ def index():
         },
         {
             "title": "Ellinox AI Guide",
-            "description": "Another awesome project.",
+            "description": "Ellinox AI Guide is a Cities: Skylines mod that adds an in-game chat interface for interacting with a local Large Language Model (LLM) server.",
             "link": "https://github.com/caavme/Ellinox-AI-Guide",
             "images": [
                 "/static/projects/ellinoxaiguide1.png",
@@ -27,7 +27,7 @@ def index():
         },
         {
             "title": "Ellinox Bluesky Bot",
-            "description": "Another awesome project.",
+            "description": "Tag @ellinox in a post to ask a question.",
             "link": "https://github.com/yourusername/project-two",
             "images": [
                 "/static/projects/project2-1.jpg",
